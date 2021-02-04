@@ -5,13 +5,16 @@ public class Tugas1 {
     private static Scanner s = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String mainMenu, subMenu;
+        String mainMenu, subMenu, nama;
+        Double suhu;
+        Integer jam;
 
         do {
             System.out.println("MAIN MENU");
             System.out.println("=====");
             System.out.println("[A]dd New Entry");
-            System.out.println("[D]isplay All Entries\n");
+            System.out.println("[D]isplay All Entries");
+            System.out.println("[X]exit\n");
             System.out.print("Your Input: ");
             mainMenu = s.nextLine();
 
@@ -21,11 +24,11 @@ public class Tugas1 {
                     System.out.println("=====\n");
 
                     System.out.print("Name: ");
-                    String nama = s.nextLine();
+                    nama = s.nextLine();
                     System.out.print("Temp (⁰C): ");
-                    double suhu = s.nextDouble();
+                    suhu = s.nextDouble();
                     System.out.print("Sleep Time (hrs): ");
-                    int jam = s.nextInt();
+                    jam = s.nextInt();
 
                     System.out.println("");
                     if (suhu >= 30 && jam >= 6) {
@@ -35,11 +38,12 @@ public class Tugas1 {
                     }
 
                     System.out.println("[A]dd Another Entry");
-                    System.out.println("[B]ack to main menu");
+                    System.out.println("[B]ack to main menu\n");
                     System.out.print("Your Input: ");
-                    mainMenu = s.nextLine();
+                    subMenu = s.next();
 
                     break;
+
                 case "D":
                     System.out.println("ALL ENTRY");
                     System.out.println("=====");
@@ -54,20 +58,36 @@ public class Tugas1 {
                     System.out.println("");
 
                     System.out.println("=====");
+                    // System.out.println("[E]dit Existing Record");
+                    // System.out.println("[D]elete Existing Record");
                     System.out.println("[B]ack to main menu\n");
                     System.out.print("Your Input: ");
-                    mainMenu = s.nextLine();
+                    subMenu = s.nextLine();
+
+                    // switch (subMenu) {
+                    // case "E":
+
+                    // break;
+                    // case "D":
+
+                    // break;
+
+                    // default:
+                    // System.out.println("You entered a wrong menu");
+                    // break;
+                    // }
 
                     break;
-                case "E":
+
+                case "X":
                     System.out.println("THANK YOU");
-
                     break;
+
                 default:
                     System.out.println("You entered a wrong menu");
                     break;
             }
 
-        } while (!mainMenu.equals("E"));
+        } while (!mainMenu.equals("X"));
     }
 }
