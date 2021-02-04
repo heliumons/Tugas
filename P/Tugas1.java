@@ -34,7 +34,6 @@ public class Tugas1 {
                     } else {
                         System.out.println("YOU ARE: NOT FIT TO WORK!\n");
                     }
-
                     // System.out.println("[A]dd Another Entry");
                     // System.out.println("[B]ack to main menu");
                     // System.out.print("Your Input: ");
