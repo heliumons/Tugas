@@ -8,7 +8,6 @@ public class Tugas1 {
         String mainMenu, subMenu;
 
         do {
-
             System.out.println("MAIN MENU");
             System.out.println("=====");
             System.out.println("[A]dd New Entry");
@@ -34,10 +33,11 @@ public class Tugas1 {
                     } else {
                         System.out.println("YOU ARE: NOT FIT TO WORK!\n");
                     }
-                    // System.out.println("[A]dd Another Entry");
-                    // System.out.println("[B]ack to main menu");
-                    // System.out.print("Your Input: ");
-                    // mainMenu = s.nextLine();
+
+                    System.out.println("[A]dd Another Entry");
+                    System.out.println("[B]ack to main menu");
+                    System.out.print("Your Input: ");
+                    mainMenu = s.nextLine();
 
                     break;
                 case "D":
@@ -59,11 +59,15 @@ public class Tugas1 {
                     mainMenu = s.nextLine();
 
                     break;
+                case "E":
+                    System.out.println("THANK YOU");
+
+                    break;
                 default:
                     System.out.println("You entered a wrong menu");
                     break;
             }
 
-        } while (mainMenu.equals("B"));
+        } while (!mainMenu.equals("E"));
     }
 }
