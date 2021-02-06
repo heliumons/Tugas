@@ -41,6 +41,31 @@ public class Tugas1 {
                     System.out.println("[B]ack to main menu\n");
                     System.out.print("Your Input: ");
                     subMenu = s.next();
+                    switch (subMenu) {
+                        case "A":
+                            System.out.println("ADD ANOTHER ENTRY");
+                            System.out.println("=====\n");
+
+                            System.out.print("Name: ");
+                            nama = s.nextLine();
+                            System.out.print("Temp (⁰C): ");
+                            suhu = s.nextDouble();
+                            System.out.print("Sleep Time (hrs): ");
+                            jam = s.nextInt();
+
+                            System.out.println("");
+                            if (suhu >= 30 && jam >= 6) {
+                                System.out.println("YOU ARE: FIT TO WORK!\n");
+                            } else {
+                                System.out.println("YOU ARE: NOT FIT TO WORK!\n");
+                            }
+                            break;
+
+                        default:
+                            System.out.println("You entered a wrong menu");
+
+                            break;
+                    }
 
                     break;
 
