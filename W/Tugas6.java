@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Tugas6 {
 
-    public static void evenNumberCase() {
+    public void evenNumberCase() {
         Scanner scanner = new Scanner(System.in);
         int input;
         do {
@@ -34,7 +34,7 @@ public class Tugas6 {
 
     }
 
-    public static boolean checkPrime(int number) {
+    public boolean checkPrime(int number) {
         if (number < 2)
             return false;
         for (int i = 2; i <= number / 2; i++) {
@@ -44,7 +44,7 @@ public class Tugas6 {
         return true;
     }
 
-    public static void primeNumberCase() {
+    public void primeNumberCase() {
         Scanner scanner = new Scanner(System.in);
         int input;
         do {
@@ -74,7 +74,7 @@ public class Tugas6 {
         } while (input != 0);
     }
 
-    public static void parallelogramCase() {
+    public void parallelogramCase() {
         Scanner scanner = new Scanner(System.in);
         int input;
         do {
@@ -104,7 +104,7 @@ public class Tugas6 {
         } while (input != 0);
     }
 
-    public static void buildRoof(int number, int space) {
+    public void buildRoof(int number, int space) {
         if (number - 2 > 0)
             buildRoof(number - 2, space + 1);
         for (int i = 0; i < space; i++) {
@@ -119,7 +119,7 @@ public class Tugas6 {
         System.out.println();
     }
 
-    public static void buildHouseCase() {
+    public void buildHouseCase() {
         Scanner scanner = new Scanner(System.in);
         int input;
         do {
@@ -147,7 +147,7 @@ public class Tugas6 {
         } while (input != 0);
     }
 
-    public static void pointOfSalesCase() {
+    public void pointOfSalesCase() {
         Scanner scanner = new Scanner(System.in);
         int input;
         final int applePrice = 5000;
@@ -286,13 +286,14 @@ public class Tugas6 {
         } while (input != 0);
     }
 
-    public static void clearScreen() {
+    public void clearScreen() {
         for (int i = 0; i < 80; i++) {
-            System.out.println("");
+            System.out.println();
         }
     }
 
     public static void main(String[] args) {
+        Tugas6 Tugas6 = new Tugas6();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to ALGO-002 Upscale");
         System.out.println("===========================\n\n");
@@ -333,7 +334,7 @@ public class Tugas6 {
                     break;
             }
         } while (input != 0);
-        clearScreen();
+        Tugas6.clearScreen();
         System.out.println("Thank you for attending ALGO-002\n\n\n");
     }
 }
