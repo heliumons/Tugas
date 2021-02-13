@@ -3,8 +3,9 @@ import java.util.*;
 
 public class Tugas6 {
 
+    private static Scanner scanner = new Scanner(System.in);
+
     public void evenNumberCase() {
-        Scanner scanner = new Scanner(System.in);
         int input;
         do {
             System.out.println("This case to display a list of even numbers as your input");
@@ -45,7 +46,6 @@ public class Tugas6 {
     }
 
     public void primeNumberCase() {
-        Scanner scanner = new Scanner(System.in);
         int input;
         do {
             System.out.println("This case to display a list of prime numbers as your input");
@@ -75,7 +75,6 @@ public class Tugas6 {
     }
 
     public void parallelogramCase() {
-        Scanner scanner = new Scanner(System.in);
         int input;
         do {
             System.out.println("This case to build a parallelogram based on your input");
@@ -120,7 +119,6 @@ public class Tugas6 {
     }
 
     public void buildHouseCase() {
-        Scanner scanner = new Scanner(System.in);
         int input;
         do {
             System.out.println("This case to build a house based on your input");
@@ -148,7 +146,6 @@ public class Tugas6 {
     }
 
     public void pointOfSalesCase() {
-        Scanner scanner = new Scanner(System.in);
         int input;
         final int applePrice = 5000;
         final int orangePrice = 4500;
@@ -294,7 +291,6 @@ public class Tugas6 {
 
     public static void main(String[] args) {
         Tugas6 Tugas6 = new Tugas6();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to ALGO-002 Upscale");
         System.out.println("===========================\n\n");
         int input;
