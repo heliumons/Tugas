@@ -33,7 +33,34 @@ public class Tugas1 {
             System.out.print("Your Input: ");
             subMenu = s.next();
 
-            subCaseA();
+            switch (subMenu) {
+                case "A":
+                    System.out.println("ADD ANOTHER ENTRY");
+                    System.out.println("=====\n");
+
+                    System.out.print("Name: ");
+                    name = s.next();
+                    System.out.print("Temp (⁰C): ");
+                    suhu = s.nextDouble();
+                    System.out.print("Sleep Time (hrs): ");
+                    jam = s.nextInt();
+
+                    System.out.println("");
+                    if (suhu >= 30 && jam >= 6) {
+                        System.out.println("YOU ARE: FIT TO WORK!\n");
+                    } else {
+                        System.out.println("YOU ARE: NOT FIT TO WORK!\n");
+                    }
+                    break;
+
+                case "B":
+                    askForAnother = true;
+                    break;
+
+                default:
+                    System.out.println("You entered a wrong menu");
+                    break;
+            }
 
         } while (!askForAnother);
     }
@@ -72,45 +99,6 @@ public class Tugas1 {
                 System.out.println("You entered a wrong menu");
                 break;
         }
-
-    }
-
-    public void subCaseA() {
-        switch (subMenu) {
-            case "A":
-                System.out.println("ADD ANOTHER ENTRY");
-                System.out.println("=====\n");
-
-                System.out.print("Name: ");
-                name = s.next();
-                System.out.print("Temp (⁰C): ");
-                suhu = s.nextDouble();
-                System.out.print("Sleep Time (hrs): ");
-                jam = s.nextInt();
-
-                System.out.println("");
-                if (suhu >= 30 && jam >= 6) {
-                    System.out.println("YOU ARE: FIT TO WORK!\n");
-                } else {
-                    System.out.println("YOU ARE: NOT FIT TO WORK!\n");
-                }
-                break;
-
-            case "B":
-                askForAnother = true;
-                break;
-
-            default:
-                System.out.println("You entered a wrong menu");
-                break;
-        }
-    }
-
-    public void subCaseE() {
-
-    }
-
-    public void subCaseD() {
 
     }
 
