@@ -1,42 +1,91 @@
 import java.util.*;
+import java.util.concurrent.SubmissionPublisher;
+
 import com.upscale.Pegawai;
 
 class Main {
     private static Scanner s = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String name;
-        int age;
-        String lanjut;
-
-        List<Pegawai> daftarSiswa = new ArrayList<Pegawai>();
+        String mainMenu, subMenu, name;
+        float temp;
+        Integer sleepHour;
+        List<Pegawai> dftrPegawai = new ArrayList<Pegawai>();
 
         Pegawai pegawai;
-
         do {
-            System.out.print("Name : ");
-            name = s.nextLine();
+            System.out.println("MAIN MENU");
+            System.out.println("=====");
+            for (int x = 0; x < dftrPegawai.size(); x++) {
+                System.out.println("Entries : " + dftrPegawai.size());
+                // System.out.println("Fit-To-Work : " + dftrPegawai.size());
+                // System.out.println("Not Fit : " + dftrPegawai.size());
+            }
+            System.out.println("=====");
+            System.out.println("[A]dd New Entry");
+            System.out.println("[D]isplay All Entries\n");
+            System.out.print("Your Input: ");
+            mainMenu = s.nextLine();
 
-            System.out.print("Age : ");
+            switch (mainMenu) {
+                case "A":
+                    do {
+                        System.out.println("ADD NEW ENTRY");
+                        System.out.println("=====\n");
 
-            age = Integer.parseInt(s.nextLine());
+                        System.out.print("Name: ");
+                        name = s.next();
+                        System.out.print("Temp (⁰C): ");
+                        temp = s.nextFloat();
+                        System.out.print("Sleep Time (hrs): ");
+                        sleepHour = s.nextInt();
 
-            pegawai = new Pegawai();
+                        System.out.println("");
+                        if (temp >= 30 && sleepHour >= 6) {
+                            System.out.println("YOU ARE: FIT TO WORK!\n");
+                        } else {
+                            System.out.println("YOU ARE: NOT FIT TO WORK!\n");
+                        }
 
-            pegawai.setName(name);
-            pegawai.setAge(age);
+                        pegawai = new Pegawai();
+                        pegawai.setName(name);
+                        pegawai.setTemp(temp);
+                        pegawai.setSleepHour(sleepHour);
 
-            daftarSiswa.add(pegawai);
+                        dftrPegawai.add(pegawai);
 
-            System.out.print("Continue [y/n] : ");
-            lanjut = s.nextLine();
-        } while (!lanjut.equals("n"));
+                        System.out.println("[A]dd Another Entry");
+                        System.out.println("[B]ack to main menu\n");
+                        System.out.print("Your Input: ");
+                        subMenu = s.next();
+                    } while (!subMenu.equals("B"));
+                    break;
 
-        for (int x = 0; x < daftarSiswa.size(); x++) {
-            System.out.println();
-            System.out.println("[" + x + "]");
-            System.out.println("Name : " + daftarSiswa.get(x).getName());
-            System.out.println("Age : " + daftarSiswa.get(x).getAge());
-        }
+                case "B":
+                    System.out.println();
+
+                    break;
+                case "D":
+                    System.out.println("ALL ENTRY");
+                    System.out.println("=====");
+                    for (int x = 0; x < dftrPegawai.size(); x++) {
+                        System.out.print(dftrPegawai.get(x).getName() + ", " + dftrPegawai.get(x).getTemp() + "⁰C, "
+                                + dftrPegawai.get(x).getSleepHour() + "hrs sleep, " + "\n");
+                    }
+
+                    System.out.println();
+
+                    System.out.println("=====");
+                    System.out.println("[B]ack to main menu\n");
+                    System.out.print("Your Input: ");
+                    subMenu = s.nextLine();
+
+                    break;
+
+                default:
+                    System.out.println("You entered a wrong menu\n");
+                    break;
+            }
+        } while (!mainMenu.equals(args));
     }
 }
