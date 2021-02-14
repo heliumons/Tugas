@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.concurrent.SubmissionPublisher;
-
 import com.upscale.Pegawai;
 
 class Main {
@@ -10,17 +8,18 @@ class Main {
         String mainMenu, subMenu, name;
         float temp;
         Integer sleepHour;
-        List<Pegawai> dftrPegawai = new ArrayList<Pegawai>();
 
+        List<Pegawai> dftrPegawai = new ArrayList<Pegawai>();
         Pegawai pegawai;
+
         do {
             System.out.println("MAIN MENU");
             System.out.println("=====");
-            for (int x = 0; x < dftrPegawai.size(); x++) {
-                System.out.println("Entries : " + dftrPegawai.size());
-                // System.out.println("Fit-To-Work : " + dftrPegawai.size());
-                // System.out.println("Not Fit : " + dftrPegawai.size());
-            }
+
+            System.out.println("Entries : " + dftrPegawai.size());
+            System.out.println("Fit-To-Work : " + dftrPegawai.size());
+            System.out.println("Not Fit : " + dftrPegawai.size());
+
             System.out.println("=====");
             System.out.println("[A]dd New Entry");
             System.out.println("[D]isplay All Entries\n");
@@ -40,17 +39,19 @@ class Main {
                         System.out.print("Sleep Time (hrs): ");
                         sleepHour = s.nextInt();
 
-                        System.out.println("");
-                        if (temp >= 30 && sleepHour >= 6) {
-                            System.out.println("YOU ARE: FIT TO WORK!\n");
-                        } else {
-                            System.out.println("YOU ARE: NOT FIT TO WORK!\n");
-                        }
-
                         pegawai = new Pegawai();
                         pegawai.setName(name);
                         pegawai.setTemp(temp);
                         pegawai.setSleepHour(sleepHour);
+
+                        System.out.println("");
+                        if (temp >= 33 && sleepHour >= 6) {
+                            System.out.println("YOU ARE: FIT TO WORK!\n");
+                            pegawai.setFitNote("Fit");
+                        } else {
+                            System.out.println("YOU ARE: NOT FIT TO WORK!\n");
+                            pegawai.setFitNote("Not Fit");
+                        }
 
                         dftrPegawai.add(pegawai);
 
@@ -70,7 +71,8 @@ class Main {
                     System.out.println("=====");
                     for (int x = 0; x < dftrPegawai.size(); x++) {
                         System.out.print(dftrPegawai.get(x).getName() + ", " + dftrPegawai.get(x).getTemp() + "⁰C, "
-                                + dftrPegawai.get(x).getSleepHour() + "hrs sleep, " + "\n");
+                                + dftrPegawai.get(x).getSleepHour() + "hrs sleep, " + dftrPegawai.get(x).getFitNote()
+                                + "\n");
                     }
 
                     System.out.println();

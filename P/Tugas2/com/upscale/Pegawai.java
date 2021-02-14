@@ -19,9 +19,9 @@ public class Pegawai {
         this.sleepHour = sleepHour;
     }
 
-    // public void setFitNote(String fitNote) {
-    // this.fitNote = fitNote;
-    // }
+    public void setFitNote(String fitNote) {
+        this.fitNote = fitNote;
+    }
 
     public String getName() {
         return this.name;
@@ -35,8 +35,8 @@ public class Pegawai {
         return this.sleepHour;
     }
 
-    // public String getUser() {
-    // return this.fitNote;
-    // }
+    public String getFitNote() {
+        return this.fitNote;
+    }
 
 }
