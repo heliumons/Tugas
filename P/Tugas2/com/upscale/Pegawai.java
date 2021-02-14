@@ -2,7 +2,7 @@ package com.upscale;
 
 public class Pegawai {
     // attribute / variable
-    private String name, user;
+    private String name, fitNote;
     private float temp;
     private int sleepHour;
 
@@ -19,8 +19,8 @@ public class Pegawai {
         this.sleepHour = sleepHour;
     }
 
-    // public void setFitNote(String user) {
-    // this.user = user;
+    // public void setFitNote(String fitNote) {
+    // this.fitNote = fitNote;
     // }
 
     public String getName() {
@@ -36,7 +36,7 @@ public class Pegawai {
     }
 
     // public String getUser() {
-    // return this.user;
+    // return this.fitNote;
     // }
 
 }
