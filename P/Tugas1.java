@@ -88,7 +88,7 @@ public class Tugas1 {
         System.out.println("[D]elete Existing Record");
         System.out.println("[B]ack to main menu\n");
         System.out.print("Your Input: ");
-        subMenu = s.nextLine();
+        subMenu = s.next();
 
         switch (subMenu) {
             case "B":
@@ -116,7 +116,7 @@ public class Tugas1 {
             System.out.println("[A]dd New Entry");
             System.out.println("[D]isplay All Entries\n");
             System.out.print("Your Input: ");
-            mainMenu = s.nextLine();
+            mainMenu = s.next();
 
             switch (mainMenu) {
                 case "A":
