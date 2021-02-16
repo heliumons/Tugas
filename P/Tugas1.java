@@ -6,7 +6,7 @@ public class Tugas1 {
 
     public void mainCaseA() {
         String subMenu, name;
-        Double suhu;
+        float suhu;
         Integer jam;
         boolean askForAnother = false;
 
@@ -16,12 +16,14 @@ public class Tugas1 {
         System.out.print("Name: ");
         name = s.next();
         System.out.print("Temp (⁰C): ");
-        suhu = s.nextDouble();
+        suhu = s.nextFloat();
         System.out.print("Sleep Time (hrs): ");
         jam = s.nextInt();
 
         System.out.println("");
-        if (suhu >= 30 && jam >= 6) {
+        if (suhu >= 33 && jam >= 6) {
+            System.out.println("YOU ARE: FIT TO WORK!\n");
+        } else if (suhu <= 37) {
             System.out.println("YOU ARE: FIT TO WORK!\n");
         } else {
             System.out.println("YOU ARE: NOT FIT TO WORK!\n");
@@ -41,12 +43,14 @@ public class Tugas1 {
                     System.out.print("Name: ");
                     name = s.next();
                     System.out.print("Temp (⁰C): ");
-                    suhu = s.nextDouble();
+                    suhu = s.nextFloat();
                     System.out.print("Sleep Time (hrs): ");
                     jam = s.nextInt();
 
                     System.out.println("");
-                    if (suhu >= 30 && jam >= 6) {
+                    if (suhu >= 33 && jam >= 6) {
+                        System.out.println("YOU ARE: FIT TO WORK!\n");
+                    } else if (suhu <= 37) {
                         System.out.println("YOU ARE: FIT TO WORK!\n");
                     } else {
                         System.out.println("YOU ARE: NOT FIT TO WORK!\n");
