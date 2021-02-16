@@ -14,21 +14,21 @@ class Main {
     Pegawai pegawai;
 
     public void mainMenu() {
-        System.out.println("MAIN MENU");
-        System.out.println("=====");
-
-        System.out.println("Entries : " + dftrPegawai.size());
-        System.out.println("Fit-To-Work : " + fitNote.size());
-        System.out.println("Not Fit : " + notFit.size());
-
-        System.out.println("=====");
-        System.out.println("[A]dd New Entry");
-        System.out.println("[D]isplay All Entries");
-        System.out.println("[E]xit\n");
-        System.out.print("Your Input: ");
-        mainMenu = s.nextLine();
-
         do {
+            System.out.println("MAIN MENU");
+            System.out.println("=====");
+
+            System.out.println("Entries : " + dftrPegawai.size());
+            System.out.println("Fit-To-Work : " + fitNote.size());
+            System.out.println("Not Fit : " + notFit.size());
+
+            System.out.println("=====");
+            System.out.println("[A]dd New Entry");
+            System.out.println("[D]isplay All Entries");
+            System.out.println("[E]xit\n");
+            System.out.print("Your Input: ");
+            mainMenu = s.next();
+
             switch (mainMenu) {
                 case "A":
                     caseA();
@@ -46,35 +46,36 @@ class Main {
                     System.out.println("You entered a wrong menu\n");
                     break;
             }
+
         } while (!mainMenu.equals("E"));
     }
 
     public void subMain() {
-        // do {
         System.out.println("[A]dd Another Entry");
         System.out.println("[B]ack to main menu");
         System.out.println("[E]xit\n");
         System.out.print("Your Input: ");
         subMenu = s.next();
 
-        switch (subMenu) {
-            case "A":
-                caseA();
-                break;
+        do {
+            switch (subMenu) {
+                case "A":
+                    caseA();
+                    break;
 
-            case "B":
-                mainMenu();
-                break;
+                case "B":
+                    mainMenu();
+                    break;
 
-            case "E":
-                System.exit(0);
-                break;
+                case "E":
+                    System.exit(0);
+                    break;
 
-            default:
-                System.out.println("You entered a wrong menu\n");
-                break;
-        }
-        // } while (!subMenu.equals("E"));
+                default:
+                    System.out.println("You entered a wrong menu\n");
+                    break;
+            }
+        } while (!(subMenu.equals("E")));
     }
 
     public void caseA() {
