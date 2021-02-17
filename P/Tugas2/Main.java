@@ -124,7 +124,23 @@ class Main {
         System.out.println();
 
         System.out.println("=========");
-        subMain();
+        System.out.println("[B]ack to main menu");
+        System.out.println("[E]xit\n");
+        System.out.print("Your Input: ");
+        subMenu = s.next();
+
+        switch (subMenu) {
+            case "B":
+                mainMenu();
+                break;
+
+            case "E":
+                System.exit(0);
+                break;
+            default:
+                break;
+        }
+
     }
 
     public static void main(String[] args) {
