@@ -38,18 +38,13 @@ public class PgwController {
 
     @PostMapping("create")
     public Pegawai createPegawai(@RequestBody Pegawai pegawai) {
-        // Random rand = new Random();
-        // Pegawai employees = new Pegawai();
-        // employees.setName("JPA-Name-" + rand.nextInt(100));
-        // employees.setTemp(rand.nextInt(100));
-        // employees.setSleepHour(rand.nextInt(100));
-        // if (Temp >= 33 && sleepHour >= 6) {
-        // employees.setFitNote("Fit To Work");
-        // } else if (Temp <= 37 && sleepHour >= 6) {
-        // employees.setFitNote("Fit To Work");
-        // } else {
-        // employees.setFitNote("Not Fit To Work");
-        // }
+        if (pegawai.getTemp() >= 33 && pegawai.getSleepHour() >= 6) {
+            pegawai.setFitNote("Fit To Work");
+        } else if (pegawai.getTemp() <= 37 && pegawai.getSleepHour() >= 6) {
+            pegawai.setFitNote("Fit To Work");
+        } else {
+            pegawai.setFitNote("Not Fit To Work");
+        }
         return PgwRepo.save(pegawai);
     }
 
@@ -60,7 +55,13 @@ public class PgwController {
             question.setName(pegawai.getName());
             question.setTemp(pegawai.getTemp());
             question.setSleepHour(pegawai.getSleepHour());
-            question.setFitNote(pegawai.getFitNote());
+            if (pegawai.getTemp() >= 33 && pegawai.getSleepHour() >= 6) {
+                question.setFitNote("Fit To Work");
+            } else if (pegawai.getTemp() <= 37 && pegawai.getSleepHour() >= 6) {
+                question.setFitNote("Fit To Work");
+            } else {
+                question.setFitNote("Not Fit To Work");
+            }
             return PgwRepo.save(question);
         }).orElseThrow(() -> new RelationNotFoundException("Question not found with id " + id));
     }
