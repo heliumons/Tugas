@@ -14,7 +14,7 @@ public class Pegawai {
     @Column(name = "name")
     private String Name;
     @Column(name = "temp")
-    private Float Temp;
+    private float Temp;
     @Column(name = "sleephour")
     private Integer SleepHour;
     @Column(name = "fitnote")
@@ -24,7 +24,7 @@ public class Pegawai {
 
     }
 
-    public Pegawai(Integer id, String Name, Float Temp, Integer SleepHour, String FitNote) {
+    public Pegawai(Integer id, String Name, float Temp, Integer SleepHour, String FitNote) {
         this.id = id;
         this.Name = Name;
         this.Temp = Temp;
@@ -48,11 +48,11 @@ public class Pegawai {
         this.Name = Name;
     }
 
-    public Float getTemp() {
+    public float getTemp() {
         return Temp;
     }
 
-    public void setAge(Float Temp) {
+    public void setTemp(float Temp) {
         this.Temp = Temp;
     }
 
