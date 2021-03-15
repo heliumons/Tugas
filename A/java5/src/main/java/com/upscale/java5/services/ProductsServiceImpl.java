@@ -49,8 +49,11 @@ public class ProductsServiceImpl implements ProductsService {
 
     @Override
     public void update(Integer productId, Products data) throws EtBadRequestException {
-        Optional<Products> prod = repo.findById(productId);
-        prod.getName(data.setName());
+        Products prod = repo.findById(productId).get();
+        prod.setName(data.getName());
+        prod.setQty(data.getQty());
+        prod.setUpdatedAt(helper.now());
+        repo.save(prod);
     }
 
     @Override

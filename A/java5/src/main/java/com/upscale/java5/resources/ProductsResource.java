@@ -49,12 +49,12 @@ public class ProductsResource {
     }
 
     @PutMapping("{productId}")
-    public ResponseEntity<Map<String, String>> update(HttpServletRequest request, @PathVariable("productId") Integer id,
-            @RequestBody Products products) {
-        service.update(id, products);
+    public ResponseEntity<Map<String, String>> update(HttpServletRequest request,
+            @PathVariable("productId") Integer productId, @RequestBody Products product) {
+        service.update(productId, product);
         Map<String, String> map = new HashMap<>();
         map.put("status", "200");
-        map.put("message", "Success Update Product Id: " + id);
+        map.put("message", "Success Update Product Id: " + productId);
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
