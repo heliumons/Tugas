@@ -58,7 +58,7 @@ public class ProductsResource {
         return new ResponseEntity<>(map, HttpStatus.OK);
     }
 
-    @DeleteMapping("{productId")
+    @DeleteMapping("{productId}")
     public ResponseEntity<Map<String, String>> delete(HttpServletRequest request,
             @PathVariable("productId") Integer id) {
         service.delete(id);
