@@ -5,7 +5,7 @@ import java.util.List;
 import javax.management.relation.RelationNotFoundException;
 
 import com.upscale.tugas3.models.Pegawai;
-import com.upscale.tugas3.repositories.PgwRepository;
+import com.upscale.tugas3.repositories.PegawaiRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,22 +18,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PgwController {
+public class PegawaiController {
 
     @Autowired
-    private PgwRepository PgwRepo;
+    private PegawaiRepository pegawaiRepository;
 
     @GetMapping("/")
     public List<Pegawai> aList() {
-        return PgwRepo.findAll();
+        return pegawaiRepository.findAll();
     }
 
     @GetMapping("pegawai/{id}")
     public ResponseEntity<Pegawai> getPegawaiById(@PathVariable(value = "id") Integer id)
             throws RelationNotFoundException {
-        Pegawai pgw = PgwRepo.findById(id)
+        Pegawai pegawai = pegawaiRepository.findById(id)
                 .orElseThrow(() -> new RelationNotFoundException("Pegawai not found for this id :: " + id));
-        return ResponseEntity.ok().body(pgw);
+        return ResponseEntity.ok().body(pegawai);
     }
 
     @PostMapping("create")
@@ -45,13 +45,13 @@ public class PgwController {
         } else {
             pegawai.setFitNote("Not Fit To Work");
         }
-        return PgwRepo.save(pegawai);
+        return pegawaiRepository.save(pegawai);
     }
 
     @PutMapping("update/{id}")
     public Pegawai updatePegawai(@PathVariable(value = "id") Integer id, @RequestBody Pegawai pegawai)
             throws RelationNotFoundException {
-        return PgwRepo.findById(id).map(question -> {
+        return pegawaiRepository.findById(id).map(question -> {
             question.setName(pegawai.getName());
             question.setTemp(pegawai.getTemp());
             question.setSleepHour(pegawai.getSleepHour());
@@ -62,14 +62,14 @@ public class PgwController {
             } else {
                 question.setFitNote("Not Fit To Work");
             }
-            return PgwRepo.save(question);
+            return pegawaiRepository.save(question);
         }).orElseThrow(() -> new RelationNotFoundException("Question not found with id " + id));
     }
 
     @DeleteMapping("delete/{id}")
     public ResponseEntity<?> deletePegawai(@PathVariable(value = "id") Integer id) throws RelationNotFoundException {
-        return PgwRepo.findById(id).map(question -> {
-            PgwRepo.delete(question);
+        return pegawaiRepository.findById(id).map(question -> {
+            pegawaiRepository.delete(question);
             return ResponseEntity.ok().build();
         }).orElseThrow(() -> new RelationNotFoundException("Question not found with id " + id));
     }
