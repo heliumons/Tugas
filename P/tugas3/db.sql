@@ -4,6 +4,6 @@ CREATE TABLE pegawai (
 	id serial PRIMARY KEY,
 	name VARCHAR ( 50 )  NOT NULL,
 	temp NUMERIC  NOT NULL,
-	sleephour INTEGER ( 50 )  NOT NULL,
+	sleephour INTEGER NOT NULL,
 	fitnote VARCHAR ( 50 ) NOT NULL 
 );
