@@ -38,7 +38,7 @@ public class TransactionService {
     // - find By Id
     public Transaction findById(Integer id) throws EtNotFoundException {
         Optional<Transaction> tran = transactionRepository.findById(id);
-        if (tran.isEmpty()) throw new EtNotFoundException("id : " + id + "Tidak Ditemukan" );
+        if (tran.isEmpty()) throw new EtNotFoundException("id : " + id + " Tidak Ditemukan" );
         return tran.get();
     }
 
